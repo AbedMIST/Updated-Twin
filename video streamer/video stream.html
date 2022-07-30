@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="7" >
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div>
+       <img src="http://172.20.10.5:5050/imgDownload" style="width:650px; height: 650px;" alt="">
+<h1>hello twin</h1>
+    </div>
+
+    <script>
+        var img = document.querySelector('img')
+
+        function loaded() {
+<!--         alert('loaded')-->
+            console.log("loaded");
+            let x = document.createElement("img");
+            x.src = " http://172.20.10.3:5050/get_image";
+            x.alt="";
+            document.querySelector('div').appendChild(x);
+            console.log(x);
+        }
+
+        if (img.complete) {
+        loaded()
+        } else {
+        img.addEventListener('load', loaded)
+        img.addEventListener('error', function() {
+            console.log("error");
+        })
+        }
+    </script>
+</body>
+</html>
