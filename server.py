@@ -12,16 +12,6 @@ def downlod_img():
     p = "images/capturedImg.png"
     return send_file(p, as_attachment=True)
 
-# @app.route('/command')
-# def send_command():  # send mood file to client
-#     x = alexa.Twin()
-#     command = x.take_command()
-#     # file1 = open("text/command.txt", "w")
-#     # file1.write(command)
-#     # file1.close()
-#     # p = "text/command.txt"
-#     # return command
-
 
 @app.route('/mood')
 def send_moodFile():  # send mood file to client
